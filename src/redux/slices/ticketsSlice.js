@@ -1,10 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-const id = uuidv4();
-
-const { responsiveArray } = require("antd/es/_util/responsiveObserver");
-
 const initialState = {
     tickets: [{
         id: uuidv4(),
@@ -57,7 +53,7 @@ export const ticketsSlice = createSlice({
         },
 
         removeTicket: (state, action) => {
-
+            
         },
 
         moveTicket: (state, action) => {
