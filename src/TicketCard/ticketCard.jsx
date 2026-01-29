@@ -1,8 +1,10 @@
 
-export function ticketCard(){
-    return(
-        <div>
-            <h1>Teste</h1>
-        </div>
-    )
-}
+
+// TicketCard.jsx
+export function TicketCard({ ticket }) {
+    return (
+      <div>
+        <p>{ticket.description}</p>
+      </div>
+    );
+  }

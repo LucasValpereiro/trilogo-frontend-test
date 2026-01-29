@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux"
-
+import { useSelector } from "react-redux";
+import  { Board }  from './Board/board';
 
 function App() {
   const tickets  = useSelector(state => state.tickets.tickets)
@@ -13,7 +13,8 @@ function App() {
         <strong>Total de Tickets Mocks:</strong> { tickets.lenght }
        </p>
 
-       <h2>Tickets para teste:</h2>
+       <Board />
+    
        {tickets.map(ticket => (
         <div key={ ticket.id }  
         style={{
@@ -26,7 +27,7 @@ function App() {
           <h3>{ ticket.description }</h3>
 
           <p>
-            <strong>Responsável</strong> { ticket.responsible }
+            <strong>Responsável:</strong> { ticket.responsible }
           </p>
 
           <p>
@@ -41,7 +42,7 @@ function App() {
             <strong>ID:</strong> { ticket.id }
           </p>
         </div>
-  ))};
+  ))}
       </div>  
   );
 }
