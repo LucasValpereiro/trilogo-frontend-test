@@ -1,50 +1,28 @@
-import { useSelector } from "react-redux";
-import  { Board }  from './Board/board';
+  import { useSelector } from "react-redux";
+  import  { Board }  from './Board/board';
+  import icon from '../assets/icon.png';
 
-function App() {
-  const tickets  = useSelector(state => state.tickets.tickets)
+  function App() {
+    const tickets  = useSelector(state => state.tickets.tickets)
 
-  return (
-  
-      <div style={{ padding: '20px' }}>
-       <h1>Trílogo Kanban</h1>
+    return (
+        
+        <div>
+          <header style={{
+            padding: '20px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}>
+        <img src={icon} alt="Ícone trílogo"></img>
 
-       <p>
-        <strong>Total de Tickets Mocks:</strong> { tickets.lenght }
-       </p>
+        <button>+ Novo ticket</button>
 
-       <Board />
-    
-       {tickets.map(ticket => (
-        <div key={ ticket.id }  
-        style={{
-            border: '1px solid #ccc',
-            padding: '15px',
-            margin: '10px 0',
-            borderRadius: '8px',
-            backgroundColor: '#f5f5f5',
-        }}>
-          <h3>{ ticket.description }</h3>
+        </header>
+        <Board />
+        </div>  
+        
+    );
+  }
 
-          <p>
-            <strong>Responsável:</strong> { ticket.responsible }
-          </p>
-
-          <p>
-            <strong>Tipo:</strong> { ticket.type }
-          </p>
-
-          <p>
-            <strong>Status:</strong> { ticket.status }
-          </p>
-
-          <p style={{fontSize: '10px', color: '#999'}}>
-            <strong>ID:</strong> { ticket.id }
-          </p>
-        </div>
-  ))}
-      </div>  
-  );
-}
-
-export default App;
+  export default App;

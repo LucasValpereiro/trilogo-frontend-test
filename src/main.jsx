@@ -4,6 +4,7 @@ import App from './App.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/slices/store.js';
 import 'antd/dist/reset.css'; // CSS próprio do AntDesign
+import './global.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
