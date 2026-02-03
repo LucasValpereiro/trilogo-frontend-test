@@ -25,6 +25,7 @@ function Column({ title, status, tickets, onEditTicket, headerClass }) {
       <div className={`${styles.columnHeader} ${headerClass}`}>
         <h3 className={styles.columnTitle}>{title}</h3>
       </div>
+      
       <div 
         ref={drop}
         className={`${styles.columnContent} ${isOver ? styles.columnOver : ''}`}

@@ -1,0 +1,37 @@
+.form :global(.ant-input:hover),
+.form :global(.ant-input:focus),
+.form :global(.ant-input-focused) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-color: #5b21b6;
+}
+
+.form :global(.ant-select:hover .ant-select-selector),
+.form :global(.ant-select-focused .ant-select-selector) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-color: #5b21b6 !important;
+}
+
+.form :global(.ant-input-textarea textarea:hover),
+.form :global(.ant-input-textarea textarea:focus) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-color: #5b21b6;
+}
+
+.form :global(.ant-btn-primary) {
+  background-color: #5b21b6;
+  border-color: #5b21b6;
+  transition: all 0.3s ease;
+}
+
+.form :global(.ant-btn-primary:hover) {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  box-shadow: 0 4px 12px rgba(91, 33, 182, 0.4);
+  transform: translateY(-1px);
+}
+
+.form :global(.ant-btn:not(.ant-btn-primary):hover) {
+  border-color: #5b21b6;
+  color: #5b21b6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

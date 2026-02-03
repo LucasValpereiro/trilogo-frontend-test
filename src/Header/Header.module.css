@@ -1,47 +1,44 @@
 .header {
-    height: 80px;
-    width: 100%;
-    background-color: #FFFFFF;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.plusSign {
-    color: #FFFFFF;
-}
-
-.buttonText {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.25px;
-    color: #FFFFFF;
-}
-
-.newButton {
-    width: 133px;
+    padding: 20px 40px;
+    background-color: #ffffff; 
+    max-width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #e5e5e5; 
+  }
+  
+  .header img {
     height: 40px;
-    border-radius: 50px;
-    color: #FFFFFF;
-    background-color: #4C12A1;
+  }
+  
+  .newButton {
+    background-color: #5b21b6;
+    color: white;
     border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
-}
-
-.newButton:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(76, 18, 161, 0.3);
-}
-
-img {
-    width: 116.57px;
-    height: 32px;
-}
-
+    transition: all 0.3s ease;
+  }
+  
+  .newButton:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 33, 182, 0.4);
+  }
+  
+  .plusSign {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .buttonText {
+    font-size: 16px;
+  }

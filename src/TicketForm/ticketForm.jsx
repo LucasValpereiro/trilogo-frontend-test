@@ -1,9 +1,11 @@
 import { Form, Input, Select, Button } from "antd";
 import { useDispatch } from "react-redux";
-import { addTicket } from "../redux/slices/ticketsSlice";
+import { addTicket, editTicket } from "../redux/slices/ticketsSlice";
 import { v4 as uuidv4 } from "uuid";
+import { useEffect } from "react";
+import styles from "./TicketForm.module.css"; // ← ADICIONE ISSO
 
-export function TicketForm({ onClose }) {
+export function TicketForm({ onClose, ticketToEdit }) {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
 
@@ -18,29 +20,53 @@ export function TicketForm({ onClose }) {
     "Ronaldo Firmeza",
     "Judite Sousa",
     "Vanderlei Antônio",
-  ];
+  ];	
 
   const TIPOS = ["Bem", "Predial", "Procedimento"];
 
-  const handleSubmit = (values) => {
-    const newTicket = {
-      id: uuidv4(),
-      description: values.description,
-      responsible: values.responsible,
-      type: values.type,
-      status: "Aberto",
-      image: null,
-    };
+  useEffect(() => {
+    if (ticketToEdit) {
+      form.setFieldsValue({
+        description: ticketToEdit.description,
+        responsible: ticketToEdit.responsible,
+        type: ticketToEdit.type,
+      });
+    } else {
+      form.resetFields();
+    }
+  }, [ticketToEdit, form]);
 
-    dispatch(addTicket(newTicket));
+  const handleSubmit = (values) => {
+    if (ticketToEdit) {
+      dispatch(editTicket({
+        id: ticketToEdit.id,
+        description: values.description,
+        responsible: values.responsible,
+        type: values.type,
+      }));
+    } else {
+      const newTicket = {
+        id: uuidv4(),
+        description: values.description,
+        responsible: values.responsible,
+        type: values.type,
+        status: "Aberto",
+        image: null,
+      };
+      dispatch(addTicket(newTicket));
+    }
 
     form.resetFields();
-
     onClose();
   };
 
   return (
-    <Form form={form} layout="vertical" onFinish={handleSubmit}>
+    <Form 
+      form={form} 
+      layout="vertical" 
+      onFinish={handleSubmit}
+      className={styles.form} // ← ADICIONE ISSO
+    >
       <Form.Item
         label="Descrição"
         name="description"
@@ -84,7 +110,10 @@ export function TicketForm({ onClose }) {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" style={{ marginRight: 8 }}>
-          Salvar
+          {ticketToEdit ? 'Atualizar' : 'Salvar'}
+        </Button>
+        <Button onClick={onClose}>
+          Cancelar
         </Button>
       </Form.Item>
     </Form>
