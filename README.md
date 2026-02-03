@@ -182,9 +182,9 @@ Este projeto foi testado manualmente em:
 ## 👨‍💻 Autor
 
 **Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/LucasValpereiro)
-- LinkedIn: [seu-linkedin](www.linkedin.com/in/lucas-valpereiro-6876111b5)
-- Email: seu-email@exemplo.com
+- GitHub: [@LucasValpereiro](https://github.com/LucasValpereiro)
+- LinkedIn: [www.linkedin.com/in/lucas-valpereiro-6876111b5](www.linkedin.com/in/lucas-valpereiro-6876111b5)
+- Email: lucasvalpereiro@hotmail.com
 
 ## 📄 Licença
 
