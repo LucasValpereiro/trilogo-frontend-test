@@ -1,0 +1,47 @@
+.header {
+    height: 80px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plusSign {
+    color: #FFFFFF;
+}
+
+.buttonText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #FFFFFF;
+}
+
+.newButton {
+    width: 133px;
+    height: 40px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    background-color: #4C12A1;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.newButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(76, 18, 161, 0.3);
+}
+
+img {
+    width: 116.57px;
+    height: 32px;
+}
+

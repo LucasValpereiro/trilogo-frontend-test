@@ -28,7 +28,7 @@ const mockTickets = [
   },
   {
     id: uuidv4(),
-    description: "Ar-condiciona não gela",
+    description: "Ar-condicionado não está gelando",
     responsible: "Janete Lima",
     type: "Bem",
     status: "Arquivado",
@@ -61,7 +61,7 @@ export const ticketsSlice = createSlice({
         },
       ];
 
-      localStorage.setItem("tickets", JSON.stringify(newTicket));
+      localStorage.setItem("tickets", JSON.stringify(addTicket));
 
       state.tickets = addTicket;
     },
@@ -85,7 +85,7 @@ export const ticketsSlice = createSlice({
       state.tickets = editTicket;
     },
 
-    removeTicket: (state, action) => {
+    removeTicket: (state, action) => {  
       const tickets = state.tickets;
 
       const removeTicket = tickets.filter((ticket) => {

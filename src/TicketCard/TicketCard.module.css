@@ -1,0 +1,62 @@
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(76, 18, 161, 0.3);
+  }
+  
+  .imageContainer {
+    margin-bottom: 12px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .tagContainer {
+    margin-bottom: 8px;
+  }
+  
+  .ticketId {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #1F1F49;
+    margin-bottom: 12px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  
+  .responsible {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F1F49;
+  }
+  
+  .menuIcon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .menuIcon:hover {
+    color: #1F1F49;
+  }

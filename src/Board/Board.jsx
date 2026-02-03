@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import { TicketCard } from '../TicketCard/TicketCard';
-import { Col, Row } from 'antd';
 import React from 'react';
+import { useState } from "react";
+import { modal } from 'antd';
+import styles from './Board.module.css';
 
 export function Board() {
   const tickets = useSelector((state) => state.tickets.tickets);
@@ -18,35 +20,53 @@ export function Board() {
   );
 
   return (
-    <Row justify="center" align="middle">
-      <Col span={6}>
-        <h2>Aberto</h2>
+    <div className={styles.board}>
+
+      <div className={styles.column}>
+        <div className={`${styles.columnHeader} ${styles.headerAberto}`}>
+        <h3 className={styles.columnTitle}>Abertos</h3>
+        </div>
+        <div className={styles.columnContent}>
         {ticketAberto.map((ticket) => (
           <TicketCard key={ticket.id} ticket={ticket} />
         ))}
-      </Col>
+        </div>
+      </div>
 
-      <Col span={6}>
-        <h2>Executado</h2>
+      <div className={styles.column}>
+        <div className={`${styles.columnHeader} ${styles.headerExecutado}`}>
+        <h3 className={styles.columnTitle}>Executados</h3>
+        </div>
+        <div className={styles.columnContent}>
         {ticketExecutado.map((ticket) => (
           <TicketCard key={ticket.id} ticket={ticket} />
         ))}
-      </Col>
+        </div>
+      </div>
 
-      <Col span={6}>
-        <h2>Vistoriado</h2>
+      <div className={styles.column}>
+        <div className={`${styles.columnHeader} ${styles.headerVistoriado}`}>
+        <h2 className={styles.columnTitle}>Vistoriados</h2>
+        </div>
+        <div className={styles.columnContent}>
         {ticketVistoriado.map(ticket => (
             <TicketCard key={ticket.id} ticket={ticket} />
         ))}
-      </Col>
+        </div>
+      </div>
 
-      <Col span={6}>
-        <h2>Arquivado</h2>
+      <div className={styles.column}>
+        <div className={`${styles.columnHeader} ${styles.headerArquivado}`}>
+        <h2 className={styles.columnTitle}>Arquivados</h2>
+        </div>
+        <div className={styles.columnContent}>
         {ticketArquivado.map(ticket => (
             <TicketCard key={ticket.id} ticket={ticket} />
         ))}
-      </Col>
-    </Row>
+        </div>
+      </div>
+
+    </div>
   );
 }
 

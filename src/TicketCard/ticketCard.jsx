@@ -1,6 +1,7 @@
 import { Card, Tag, Dropdown, Menu } from "antd";
 import { EllipsisOutlined } from "@ant-design/icons";
 import React from "react";
+import styles from "./TicketCard.module.css";
 
 export function TicketCard({ ticket }) {
   const menu = (
@@ -12,24 +13,32 @@ export function TicketCard({ ticket }) {
   );
 
   return (
-    <Card>
-      {ticket.image && <img src={ticket.image} alt="foto" />}
-      <br />
-      <Tag style={{ backgroundColor: "#CAD1EB" }}>{ticket.type}</Tag>
-      <br />
+    <Card className={styles.card}>
+      {ticket.image && (
+        <div className={styles.imageContainer}>
+          <img src={ticket.image} alt="foto" className={styles.image} />
+        </div>
+      )}
+      <div className={styles.tagContainer}>
+        <Tag style={{ backgroundColor: "#CAD1EB" }}>{ticket.type}</Tag>
+      </div>
+
+      <div className={styles.ticketId}>
       {ticket.id.slice(-4)}
-      <br />
+      </div>
+
+      <div className={styles.description}>
       {ticket.description}
-      <br />
+      </div>
 
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between", 
+          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <span style={{color: '#1F1F49'}}>{ticket.responsible}</span>
+        <span className={styles.responsible}>{ticket.responsible}</span>
 
         <Dropdown overlay={menu} trigger={["click"]}>
           <EllipsisOutlined style={{ fontSize: "20px", cursor: "pointer" }} />
