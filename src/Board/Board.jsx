@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
 import { TicketCard } from '../TicketCard/TicketCard';
 import React from 'react';
-import { useState } from "react";
-import { modal } from 'antd';
 import styles from './Board.module.css';
 
 export function Board() {
