@@ -39,7 +39,7 @@ Antes de começar, você precisa ter instalado:
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/SEU-USUARIO/trilogo-frontend-test.git
+git clone https://github.com/LucasValpereiro/trilogo-frontend-test.git
 cd trilogo-frontend-test
 ```
 
@@ -182,8 +182,8 @@ Este projeto foi testado manualmente em:
 ## 👨‍💻 Autor
 
 **Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [seu-linkedin](https://linkedin.com/in/seu-linkedin)
+- GitHub: [@seu-usuario](https://github.com/LucasValpereiro)
+- LinkedIn: [seu-linkedin](www.linkedin.com/in/lucas-valpereiro-6876111b5)
 - Email: seu-email@exemplo.com
 
 ## 📄 Licença
