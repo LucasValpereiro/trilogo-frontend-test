@@ -1,4 +1,3 @@
-
 import { useSelector, useDispatch } from "react-redux";
 import { TicketCard } from '../TicketCard/TicketCard';
 import { moveTicket } from '../redux/slices/ticketsSlice';
@@ -6,7 +5,6 @@ import { useDrop } from 'react-dnd';
 import React from 'react';
 import styles from './Board.module.css';
 
-// Componente de Coluna com Drop
 function Column({ title, status, tickets, onEditTicket, headerClass }) {
   const dispatch = useDispatch();
 
@@ -29,11 +27,7 @@ function Column({ title, status, tickets, onEditTicket, headerClass }) {
       </div>
       <div 
         ref={drop}
-        className={styles.columnContent}
-        style={{
-          backgroundColor: isOver ? '#f0f0f0' : 'transparent',
-          minHeight: '500px',
-        }}
+        className={`${styles.columnContent} ${isOver ? styles.columnOver : ''}`}
       >
         {tickets.map((ticket) => (
           <TicketCard 

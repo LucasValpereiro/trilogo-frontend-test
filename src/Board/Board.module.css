@@ -1,60 +1,68 @@
-
 .board {
-    display: flex;
-    gap: 20px;
-    padding: 40px 60px;
-    background-color: #F0F2F5;
-    min-height: 100vh;
-    justify-content: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-  .column {
-    width: 275px;
-    display: flex;
-    flex-direction: column;
-   
-  }
+.column {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-  .columnHeader {
-    height: 40px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-  }
+.columnHeader {
+  padding: 12px 16px;
+  color: white;
+  font-weight: 600;
+}
 
-  .columnTitle {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0.25px;
-    color: #141414;
-    margin-top: 10px;
+.headerAberto {
+  background-color: #FFB4B4;
+}
+
+.headerExecutado {
+  background-color: #FFD19C;
+}
+
+.headerVistoriado {
+  background-color: #C8E6C9;
+}
+
+.headerArquivado {
+  background-color: #BDBDBD;
+}
+
+.columnTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.columnContent {
+  padding: 16px;
+  min-height: 500px;
+  flex: 1;
+  transition: background-color 0.2s ease;
+}
+
+.columnOver {
+  background-color: #e8e8e8;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .board {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .columnContent {
-    background-color: #FFFFFF;
-    border-radius: 0 0 8px 8px;
-    padding: 16px;
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: 1fr;
   }
-  
-  .headerAberto {
-    background-color: rgba(245, 34, 45, 0.25);
-  }
-  
-  .headerExecutado {
-    background-color: rgba(255, 169, 64, 0.25);
-  }
-  
-  .headerVistoriado {
-    background-color: rgba(115, 209, 61, 0.25);
-  }
-  
-  .headerArquivado {
-    background-color: rgba(140, 140, 140, 0.25);
-  }
+}

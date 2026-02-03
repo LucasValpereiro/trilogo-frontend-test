@@ -1,14 +1,25 @@
-import { Card, Tag, Dropdown, Modal } from "antd";
+import { Card, Tag, Modal } from "antd";
 import { EllipsisOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeTicket } from "../redux/slices/ticketsSlice";
+import { useDrag } from 'react-dnd';
 import styles from "./TicketCard.module.css";
 
-export function TicketCard({ ticket }) {
+export function TicketCard({ ticket, onEdit }) {
   const dispatch = useDispatch();
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: 'TICKET',
+    item: { id: ticket.id, status: ticket.status },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }), [ticket.id, ticket.status]);
 
   const handleDelete = () => {
+    setMenuVisible(false);  
     Modal.confirm({
       title: 'Confirmar exclusão',
       icon: <ExclamationCircleOutlined />,
