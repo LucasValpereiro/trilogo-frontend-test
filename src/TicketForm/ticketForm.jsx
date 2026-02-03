@@ -20,7 +20,7 @@ export function TicketForm({ onClose }) {
     "Vanderlei Antônio",
   ];
 
-  const TIPOS = ["Bem", "predial", "procedimento"];
+  const TIPOS = ["Bem", "Predial", "Procedimento"];
 
   const handleSubmit = (values) => {
     const newTicket = {

@@ -1,4 +1,4 @@
-import { Card, Tag, Dropdown, Menu, Modal } from "antd";
+import { Card, Tag, Dropdown, Modal } from "antd";
 import { EllipsisOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -17,18 +17,28 @@ export function TicketCard({ ticket }) {
       okType: 'danger', 
       cancelText: 'Cancelar', 
       onOk() {
-        dispatch(removeTicket({ id: ticket.id }))
+        dispatch(removeTicket({ id: ticket.id }));
       },
     });
   };
 
-  const menu = (
-    <Menu>
-      <Menu.Item key="editar">Editar</Menu.Item>
-      <Menu.Item key="deletar" onClick={handleDelete}>Deletar</Menu.Item>
-      <Menu.Item key="mover">Mover para...</Menu.Item>
-    </Menu>
-  );
+  // ✅ FORMATO NOVO - Array de items
+  const items = [
+    {
+      key: 'editar',
+      label: 'Editar',
+    },
+    {
+      key: 'deletar',
+      label: 'Deletar',
+      danger: true,
+      onClick: handleDelete,
+    },
+    {
+      key: 'mover',
+      label: 'Mover para...',
+    },
+  ];
 
   return (
     <Card className={styles.card}>
@@ -37,16 +47,17 @@ export function TicketCard({ ticket }) {
           <img src={ticket.image} alt="foto" className={styles.image} />
         </div>
       )}
+      
       <div className={styles.tagContainer}>
         <Tag style={{ backgroundColor: "#CAD1EB" }}>{ticket.type}</Tag>
       </div>
 
       <div className={styles.ticketId}>
-      {ticket.id.slice(-4)}
+        {ticket.id.slice(-4)}
       </div>
 
       <div className={styles.description}>
-      {ticket.description}
+        {ticket.description}
       </div>
 
       <div
@@ -58,10 +69,19 @@ export function TicketCard({ ticket }) {
       >
         <span className={styles.responsible}>{ticket.responsible}</span>
 
-        <Dropdown overlay={menu} trigger={["click"]}>
-          <div style={{ display: "inline-block", cursor: "pointer" }}>
-            <EllipsisOutlined style={{ fontSize: "20px" }} />
-          </div>
+        {/* ✅ Dropdown com menu={{ items }} */}
+        <Dropdown 
+          menu={{ items }}
+          trigger={['click']}
+          placement="bottomRight"
+        >
+          <EllipsisOutlined 
+            style={{ 
+              fontSize: "20px", 
+              cursor: "pointer",
+              padding: "4px" // Adiciona área clicável
+            }} 
+          />
         </Dropdown>
       </div>
     </Card>
