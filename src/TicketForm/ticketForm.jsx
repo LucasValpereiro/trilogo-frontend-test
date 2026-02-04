@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTicket, editTicket } from "../redux/slices/ticketsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
-import styles from "./TicketForm.module.css"; // ← ADICIONE ISSO
+import styles from "./TicketForm.module.css"; 
 
 export function TicketForm({ onClose, ticketToEdit }) {
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ export function TicketForm({ onClose, ticketToEdit }) {
       form={form} 
       layout="vertical" 
       onFinish={handleSubmit}
-      className={styles.form} // ← ADICIONE ISSO
+      className={styles.form}
     >
       <Form.Item
         label="Descrição"
