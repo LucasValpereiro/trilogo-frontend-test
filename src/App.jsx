@@ -8,7 +8,6 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 function App() {
-  const tickets = useSelector(state => state.tickets.tickets);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [ticketToEdit, setTicketToEdit] = useState(null);

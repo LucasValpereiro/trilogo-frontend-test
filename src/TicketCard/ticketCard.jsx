@@ -2,7 +2,7 @@ import { Card, Tag, Modal } from "antd";
 import { EllipsisOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeTicket } from "../redux/slices/ticketsSlice";
+import { removeTicket } from "../redux/slices/TicketsSlice";
 import { useDrag } from 'react-dnd';
 import styles from "./TicketCard.module.css";
 
@@ -30,7 +30,7 @@ export function TicketCard({ ticket, onEdit }) {
       onOk() {
         dispatch(removeTicket({ id: ticket.id }));
       },
-    });
+    }); 
   };
 
   return (

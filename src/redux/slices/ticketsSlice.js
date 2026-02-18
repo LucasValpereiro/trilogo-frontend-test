@@ -106,7 +106,7 @@ export const ticketsSlice = createSlice({
             ...ticket,
             ...action.payload,
           };
-        }
+        } 
 
         return ticket;
       });
